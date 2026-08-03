@@ -23,14 +23,21 @@
     <textarea name="message" rows="5" placeholder="Describe your project, specs and target timeline..."></textarea>
   </label>
 
-  {{/* Honeypot spam protection — hidden from humans */}}
+  {{/* Honeypot spam protection — hidden from humans, bots fill it */}}
   <div class="hp" aria-hidden="true">
     <label>Please leave this field empty
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
     </label>
   </div>
 
+  {{/* Formspree hidden controls */}}
   <input type="hidden" name="_subject" value="New RFQ — cabinet.github.io ({{ .Language.Lang }})">
   <input type="hidden" name="_language" value="{{ .Language.Lang }}">
+  {{ $next := "/thanks/" }}{{ if ne .Language.Lang "en" }}{{ $next = printf "/%s/thanks/" .Language.Lang }}{{ end }}
+  <input type="hidden" name="_next" value="{{ $next }}">
+
+  {{/* Submission status — populated by JS on error; success redirects to _next */}}
+  <div class="form-status" role="alert" aria-live="polite" hidden></div>
+
   <button type="submit" class="btn btn-primary">{{ if .IsHome }}{{ .Params.hero.cta_quote }}{{ else }}Send RFQ{{ end }}</button>
 </form>

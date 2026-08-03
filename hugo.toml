@@ -51,7 +51,7 @@ summaryLength         = 240
   facebook      = "https://www.facebook.com/cabinetcomponents"
   linkedin      = "https://www.linkedin.com/company/cabinetcomponents"
   youtube       = "https://www.youtube.com/@cabinetcomponents"
-  formspreeEndpoint = "https://formspree.io/f/xdaqjegz"
+  formspreeEndpoint = "https://formspree.io/f/mlgqkkvj"
   mainSections  = ["products", "services", "industries", "applications", "blog"]
 
 # ---------------------------------------------------------------------------
