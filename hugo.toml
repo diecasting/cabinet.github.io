@@ -5,7 +5,7 @@
 # Framework: industrial-hugo-seo-framework (architecture reference)
 # =============================================================================
 
-baseURL               = "https://cabinet.github.io/"
+baseURL               = "https://diecasting.github.io/cabinet.github.io/"
 locale                = "en-us"
 title                 = "Cabinet Industrial Components Manufacturer"
 enableRobotsTXT       = true
