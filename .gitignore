@@ -11,3 +11,6 @@ Thumbs.db
 
 # Local
 gen_assets.py
+
+# never commit credentials
+_cred.txt
