@@ -2,6 +2,7 @@
 /public/
 /resources/_gen/
 /hugo_cache/
+.hugo_build.lock
 *.log
 
 # OS
