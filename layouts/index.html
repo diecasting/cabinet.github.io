@@ -1,0 +1,116 @@
+{{ define "main" }}
+{{/* ============ 1. HERO ============ */}}
+<section class="hero" id="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <h1>{{ .Params.hero.title }}</h1>
+      <p class="subtitle">{{ .Params.hero.subtitle }}</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="{{ relURL "/contact" }}">{{ .Params.hero.cta_quote }}</a>
+        <a class="btn btn-secondary" href="{{ relURL "/contact" }}">{{ .Params.hero.cta_contact }}</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="{{ relURL "/images/industrial-control-cabinet-components.webp" }}"
+           alt="Electrical control cabinet components kit assembled for industrial automation panels"
+           title="Electrical Control Cabinet Components Kit"
+           width="640" height="420" loading="eager">
+    </div>
+  </div>
+</section>
+
+{{/* ============ 2. COMPANY INTRODUCTION ============ */}}
+<section class="section intro" id="intro">
+  <div class="container">
+    <h2>{{ .Params.intro.heading }}</h2>
+    <p class="lead">{{ .Params.intro.body | markdownify }}</p>
+  </div>
+</section>
+
+{{/* ============ 3. CORE PRODUCTS ============ */}}
+<section class="section products" id="products">
+  <div class="container">
+    <h2>{{ .Params.products.heading }}</h2>
+    <div class="card-grid">
+      {{ range .Params.products.items }}
+      <article class="card">
+        <img src="{{ relURL "/images/control-panel-accessories-kit.webp" }}" alt="{{ .name }} — industrial control panel accessories" title="{{ .name }}" width="320" height="220" loading="lazy">
+        <h3>{{ .name }}</h3>
+        <p>{{ .desc }}</p>
+      </article>
+      {{ end }}
+    </div>
+    <p class="more"><a class="btn btn-outline" href="{{ relURL "/products" }}">{{ i18n "Products" }} →</a></p>
+  </div>
+</section>
+
+{{/* ============ 4. MANUFACTURING CAPABILITY ============ */}}
+<section class="section capability" id="capability">
+  <div class="container two-col">
+    <div>
+      <h2>{{ .Params.capability.heading }}</h2>
+      <p>{{ .Params.capability.body | markdownify }}</p>
+    </div>
+    <ul class="tick-list">
+      {{ range .Params.capability.items }}<li>{{ . }}</li>{{ end }}
+    </ul>
+  </div>
+</section>
+
+{{/* ============ 5. QUALITY CONTROL ============ */}}
+<section class="section quality" id="quality">
+  <div class="container two-col">
+    <div>
+      <h2>{{ .Params.quality.heading }}</h2>
+      <p>{{ .Params.quality.body | markdownify }}</p>
+    </div>
+    <ul class="tick-list">
+      {{ range .Params.quality.items }}<li>{{ . }}</li>{{ end }}
+    </ul>
+  </div>
+</section>
+
+{{/* ============ 6. APPLICATIONS ============ */}}
+<section class="section applications" id="applications">
+  <div class="container">
+    <h2>{{ .Params.applications.heading }}</h2>
+    <div class="tag-grid">
+      {{ range .Params.applications.items }}
+      <a class="tag" href="{{ relURL "/applications" }}">{{ .name }}</a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* ============ 7. WHY CHOOSE US ============ */}}
+<section class="section why" id="why">
+  <div class="container">
+    <h2>{{ .Params.why.heading }}</h2>
+    <div class="card-grid">
+      {{ range .Params.why.items }}
+      <article class="card">
+        <h3>{{ .name }}</h3>
+        <p>{{ .desc }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* ============ 8. OEM / ODM ============ */}}
+<section class="section oem" id="oem">
+  <div class="container">
+    <h2>{{ .Params.oem.heading }}</h2>
+    <p class="lead">{{ .Params.oem.body | markdownify }}</p>
+  </div>
+</section>
+
+{{/* ============ 9. RFQ CONTACT ============ */}}
+<section class="section rfq" id="rfq">
+  <div class="container">
+    <h2>{{ .Params.contact.heading }}</h2>
+    <p class="lead">{{ .Params.contact.body | markdownify }}</p>
+    {{ partial "contact-form.html" . }}
+  </div>
+</section>
+{{ end }}

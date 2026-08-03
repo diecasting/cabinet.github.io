@@ -1,0 +1,199 @@
+- title: "Complete Guide to Electrical Control Cabinet Components"
+  slug: "guide-electrical-control-cabinet-components"
+  keyword: "electrical control cabinet components"
+  outline:
+    - "What a control cabinet contains (structural, connection, routing layers)"
+    - "Common component families and their roles"
+    - "How components work together as a system"
+    - "Selection checklist for panel builders"
+    - "Sourcing tips and quality signs to look for"
+
+- title: "How to Choose Terminal Blocks for Control Panels"
+  slug: "choose-terminal-blocks-control-panels"
+  keyword: "terminal blocks for control panels"
+  outline:
+    - "Screw vs spring-cage vs push-in terminal types"
+    - "Current, voltage and wire-size ratings"
+    - "Marking, jumpers and partitioning options"
+    - "Vibration and maintenance considerations"
+    - "When to standardize on one family"
+
+- title: "DIN Rail Types Explained: TH35 vs G32"
+  slug: "din-rail-types-th35-vs-g32"
+  keyword: "DIN rail types"
+  outline:
+    - "Origins of the DIN rail standard"
+    - "TH35 top-hat profile characteristics"
+    - "G32 G-type profile characteristics"
+    - "Steel, aluminum and stainless selection"
+    - "Mounting, cutting and accessory matching"
+
+- title: "Control Panel Assembly Best Practices"
+  slug: "control-panel-assembly-best-practices"
+  keyword: "control panel assembly"
+  outline:
+    - "Planning the layout before building"
+    - "Rail mounting and device spacing"
+    - "Wiring order and strain relief"
+    - "Labeling and documentation"
+    - "Testing and commissioning steps"
+
+- title: "Cable Management in Electrical Cabinets"
+  slug: "cable-management-electrical-cabinets"
+  keyword: "cable management electrical cabinet"
+  outline:
+    - "Why neat wiring improves reliability"
+    - "Cable duct selection and filling ratios"
+    - "Conduit and clamp usage"
+    - "Strain relief at entries"
+    - "Common cable-management mistakes"
+
+- title: "Electrical Cabinet Design Checklist"
+  slug: "electrical-cabinet-design-checklist"
+  keyword: "electrical cabinet design"
+  outline:
+    - "Define load and environment first"
+    - "Enclosure size and ingress protection"
+    - "Component layout and cooling"
+    - "Grounding and bonding plan"
+    - "Documentation and serviceability"
+
+- title: "Push-in vs Spring-cage vs Screw Terminals"
+  slug: "push-in-spring-cage-screw-terminals"
+  keyword: "push-in terminals"
+  outline:
+    - "How each connection technology works"
+    - "Wiring speed and tool requirements"
+    - "Vibration and retention performance"
+    - "Cost and reusability trade-offs"
+    - "Recommendation by application"
+
+- title: "How to Build a Control Panel Kit"
+  slug: "build-control-panel-kit"
+  keyword: "control panel kit"
+  outline:
+    - "From BOM to validated kit"
+    - "Cutting rails and sorting terminals"
+    - "Bagging hardware by assembly zone"
+    - "Build sheet and documentation"
+    - "Benefits over loose-part sourcing"
+
+- title: "Industrial Automation Parts Buyer's Guide"
+  slug: "industrial-automation-parts-buyers-guide"
+  keyword: "industrial automation parts"
+  outline:
+    - "Core parts every automation panel needs"
+    - "Quality and traceability requirements"
+    - "MOQ and lead-time planning"
+    - "Global sourcing and documentation"
+    - "Evaluating a components supplier"
+
+- title: "Enclosure Accessories: Glands and Sealing"
+  slug: "enclosure-accessories-glands-sealing"
+  keyword: "cable glands enclosure"
+  outline:
+    - "Role of cable glands in IP protection"
+    - "Plastic, brass and stainless options"
+    - "Sizing glands to cable and hole"
+    - "Multi-hole plates and strain relief"
+    - "Sealing and grounding at entries"
+
+- title: "OEM Control Cabinet Components Sourcing"
+  slug: "oem-control-cabinet-components-sourcing"
+  keyword: "OEM control cabinet components"
+  outline:
+    - "Why OEMs standardize on kits"
+    - "Private-label and ODM options"
+    - "Confidentiality and IP protection"
+    - "Tooling and prototyping workflow"
+    - "Scaling from prototype to volume"
+
+- title: "Grounding and Bonding in Control Panels"
+  slug: "grounding-bonding-control-panels"
+  keyword: "control panel grounding"
+  outline:
+    - "Why equipotential bonding matters"
+    - "Grounding bars, clips and straps"
+    - "Enclosure to mounting plate bonding"
+    - "Cable shield grounding practice"
+    - "Verification and testing"
+
+- title: "DIN Rail Components for Harsh Environments"
+  slug: "din-rail-components-harsh-environments"
+  keyword: "stainless DIN rail"
+  outline:
+    - "Where standard steel fails"
+    - "Stainless and coated rail options"
+    - "Matching accessories to material"
+    - "Corrosion and washdown considerations"
+    - "Specification example"
+
+- title: "Wire Marking and Labeling Standards"
+  slug: "wire-marking-labeling-standards"
+  keyword: "wire marking standards"
+  outline:
+    - "Why consistent marking prevents errors"
+    - "Ferrules, sleeves and tags"
+    - "Color codes and numbering schemes"
+    - "Print-on-site vs pre-printed"
+    - "Linking labels to drawings"
+
+- title: "Control Panel Cooling and Ventilation"
+  slug: "control-panel-cooling-ventilation"
+  keyword: "control panel cooling"
+  outline:
+    - "Heat sources inside a panel"
+    - "Natural vs forced ventilation"
+    - "Filters, fans and exchangers"
+    - "Sizing cooling to load"
+    - "Avoiding condensation issues"
+
+- title: "Selecting Cable Ducts for Panels"
+  slug: "selecting-cable-ducts-panels"
+  keyword: "cable duct selection"
+  outline:
+    - "Slotted vs solid duct"
+    - "Filling ratio rules"
+    - "Cover retention and routing"
+    - "Material and flammability"
+    - "Sizing to wire bundle"
+
+- title: "Electrical Cabinet IP Rating Basics"
+  slug: "electrical-cabinet-ip-rating-basics"
+  keyword: "enclosure IP rating"
+  outline:
+    - "What IP codes mean"
+    - "Common ratings for control panels"
+    - "How glands and seals affect IP"
+    - "Indoor vs outdoor choices"
+    - "Testing and documentation"
+
+- title: "Automation Panel Commissioning Tips"
+  slug: "automation-panel-commissioning-tips"
+  keyword: "automation panel commissioning"
+  outline:
+    - "Pre-power inspection checklist"
+    - "Insulation and continuity tests"
+    - "Power-up sequence"
+    - "I/O and signal verification"
+    - "Common faults and fixes"
+
+- title: "Reducing Wiring Errors in Panel Builds"
+  slug: "reducing-wiring-errors-panel-builds"
+  keyword: "reduce wiring errors panel"
+  outline:
+    - "Root causes of wiring mistakes"
+    - "Kitting and sorted parts"
+    - "Clear marking and build sheets"
+    - "Peer-check and test steps"
+    - "Measuring improvement"
+
+- title: "Future Trends in Control Cabinet Manufacturing"
+  slug: "future-trends-control-cabinet-manufacturing"
+  keyword: "control cabinet manufacturing trends"
+  outline:
+    - "Modular and pre-kitted panels"
+    - "Digital BOM and configurator tools"
+    - "Sustainable materials and packaging"
+    - "Smart labeling and traceability"
+    - "What it means for buyers"

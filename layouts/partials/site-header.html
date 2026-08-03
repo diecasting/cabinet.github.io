@@ -1,0 +1,32 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ .Site.Home.RelPermalink }}" aria-label="{{ .Site.Title }}">
+      <img src="{{ relURL "/favicon.svg" }}" alt="{{ .Site.Params.companyName }}" width="32" height="32">
+      <span class="brand-name">{{ .Site.Params.companyName }}</span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu"><span></span></label>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .PageRef | relLangURL }}">{{ i18n .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <nav class="lang-switch" aria-label="Language">
+      {{ range .Site.Home.AllTranslations }}
+        {{ $l := .Language }}
+        {{ $link := .RelPermalink }}
+        {{ if not $.IsHome }}
+          {{ with where $.Translations "Language.Lang" $l.Lang }}
+            {{ $link = (index . 0).RelPermalink }}
+          {{ end }}
+        {{ end }}
+        <a href="{{ $link }}" hreflang="{{ $l.Lang }}" lang="{{ $l.Lang }}" class="{{ if eq $l.Lang $.Language.Lang }}active{{ end }}">{{ $l.Params.langNameShort }}</a>{{ if ne $l.Weight 5 }}<span class="sep"> | </span>{{ end }}
+      {{ end }}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,148 @@
+# =============================================================================
+# cabinet.github.io
+# B2B Industrial Manufacturer Website — Electrical Control Cabinet Components Kit
+# Template : industrial-manufacturer-hugo-template-2.1
+# Framework: industrial-hugo-seo-framework (architecture reference)
+# =============================================================================
+
+baseURL               = "https://cabinet.github.io/"
+locale                = "en-us"
+title                 = "Cabinet Industrial Components Manufacturer"
+enableRobotsTXT       = true
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+paginate              = 9
+hasCJKLanguage        = true
+enableEmoji           = false
+summaryLength         = 240
+
+# ---------------------------------------------------------------------------
+# Build / output (minify)
+# ---------------------------------------------------------------------------
+[minify]
+  minifyOutput = true
+
+[build]
+  writeStats = false
+
+# ---------------------------------------------------------------------------
+# Sitemap
+# ---------------------------------------------------------------------------
+[sitemap]
+  changefreq = "weekly"
+  priority   = 0.5
+  filename   = "sitemap.xml"
+
+# ---------------------------------------------------------------------------
+# Global params  (company identity + GEO + SEO)
+# ---------------------------------------------------------------------------
+[params]
+  companyName   = "Cabinet Industrial Components Manufacturer"
+  legalName     = "Cabinet Industrial Components Manufacturer Co., Ltd."
+  description   = "Global manufacturer and supplier of Electrical Control Cabinet Components Kits — reliable industrial components for electrical control panels, DIN rail mounting, terminal blocks, cable management and factory automation systems."
+  foundingYear  = 2008
+  email         = "sales@cabinet.example.com"
+  phone         = "+86-000-0000-0000"
+  geoRegion     = "Global"
+  geoPlacename  = "Shenzhen, Guangdong, China"
+  geoPosition   = "22.5431;114.0579"
+  ICBM          = "22.5431, 114.0579"
+  twitter       = "@cabinetcomponents"
+  facebook      = "https://www.facebook.com/cabinetcomponents"
+  linkedin      = "https://www.linkedin.com/company/cabinetcomponents"
+  youtube       = "https://www.youtube.com/@cabinetcomponents"
+  formspreeEndpoint = "https://formspree.io/f/xdaqjegz"
+  mainSections  = ["products", "services", "industries", "applications", "blog"]
+
+# ---------------------------------------------------------------------------
+# Languages (Multilingual: EN default, DE, JA, FR, ES)
+# translationKey is used on every translated page for language association.
+# ---------------------------------------------------------------------------
+[languages]
+  [languages.en]
+    locale = "en-us"
+    label  = "English"
+    weight = 1
+    contentDir = "content"
+    [languages.en.params]
+      langNameShort = "EN"
+      langNameFull  = "English"
+      htmlLang      = "en"
+
+  [languages.de]
+    locale = "de-de"
+    label  = "Deutsch"
+    weight = 2
+    contentDir = "content"
+    [languages.de.params]
+      langNameShort = "DE"
+      langNameFull  = "Deutsch"
+      htmlLang      = "de"
+
+  [languages.ja]
+    locale = "ja-jp"
+    label  = "日本語"
+    weight = 3
+    contentDir = "content"
+    [languages.ja.params]
+      langNameShort = "JA"
+      langNameFull  = "日本語"
+      htmlLang      = "ja"
+
+  [languages.fr]
+    locale = "fr-fr"
+    label  = "Français"
+    weight = 4
+    contentDir = "content"
+    [languages.fr.params]
+      langNameShort = "FR"
+      langNameFull  = "Français"
+      htmlLang      = "fr"
+
+  [languages.es]
+    locale = "es-es"
+    label  = "Español"
+    weight = 5
+    contentDir = "content"
+    [languages.es.params]
+      langNameShort = "ES"
+      langNameFull  = "Español"
+      htmlLang      = "es"
+
+# ---------------------------------------------------------------------------
+# Menus
+# ---------------------------------------------------------------------------
+[[menus.main]]
+  name = "Products"
+  pageRef = "/products"
+  weight = 10
+[[menus.main]]
+  name = "Services"
+  pageRef = "/services"
+  weight = 20
+[[menus.main]]
+  name = "Industries"
+  pageRef = "/industries"
+  weight = 30
+[[menus.main]]
+  name = "Applications"
+  pageRef = "/applications"
+  weight = 40
+[[menus.main]]
+  name = "Blog"
+  pageRef = "/blog"
+  weight = 50
+[[menus.main]]
+  name = "Contact"
+  pageRef = "/contact"
+  weight = 60
+
+# ---------------------------------------------------------------------------
+# Output formats
+# ---------------------------------------------------------------------------
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]

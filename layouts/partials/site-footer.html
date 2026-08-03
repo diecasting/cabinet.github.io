@@ -1,0 +1,35 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h2>{{ .Site.Params.companyName }}</h2>
+      <p>{{ .Site.Params.description | plainify }}</p>
+      <p class="contact-line">
+        <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a><br>
+        {{ .Site.Params.phone }}
+      </p>
+    </div>
+    <nav aria-label="Footer">
+      <h3>{{ i18n "navigate" }}</h3>
+      <ul>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .PageRef | relLangURL }}">{{ i18n .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+    <div>
+      <h3>{{ i18n "languages" }}</h3>
+      <ul class="lang-list">
+        {{ range .Site.Home.AllTranslations }}
+          {{ $l := .Language }}
+          {{ $link := .RelPermalink }}
+          {{ if not $.IsHome }}{{ with where $.Translations "Language.Lang" $l.Lang }}{{ $link = (index . 0).RelPermalink }}{{ end }}{{ end }}
+        <li><a href="{{ $link }}">{{ $l.Params.langNameFull }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© {{ now.Year }} {{ .Site.Params.legalName }}. {{ i18n "rights" }}</p>
+    <p class="geo">{{ .Site.Params.geoPlacename }}</p>
+  </div>
+</footer>

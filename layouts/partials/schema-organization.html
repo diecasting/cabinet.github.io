@@ -1,0 +1,30 @@
+{{ $url := .Site.BaseURL }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Organization", "ManufacturingBusiness"],
+  "name": {{ .Site.Params.companyName | jsonify }},
+  "legalName": {{ .Site.Params.legalName | jsonify }},
+  "url": {{ $url | jsonify }},
+  "logo": {{ (printf "%sfavicon.svg" $url) | jsonify }},
+  "image": {{ (printf "%simages/industrial-control-cabinet-components.webp" $url) | jsonify }},
+  "description": {{ .Site.Params.description | plainify | jsonify }},
+  "foundingDate": {{ .Site.Params.foundingYear }},
+  "email": {{ .Site.Params.email | jsonify }},
+  "telephone": {{ .Site.Params.phone | jsonify }},
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Shenzhen",
+    "addressRegion": "Guangdong",
+    "addressCountry": "CN"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": {{ .Site.Params.phone | jsonify }},
+    "contactType": "sales",
+    "email": {{ .Site.Params.email | jsonify }},
+    "availableLanguage": {{ slice "English" "German" "Japanese" "French" "Spanish" | jsonify }}
+  },
+  "sameAs": {{ slice .Site.Params.facebook .Site.Params.linkedin .Site.Params.youtube .Site.Params.twitter | jsonify }}
+}
+</script>

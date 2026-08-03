@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article class="page">
+  <div class="container">
+    <header class="page-header">
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+    </header>
+    <div class="page-body">
+      <table class="plan-table">
+        <thead>
+          <tr><th>#</th><th>Title</th><th>Slug</th><th>SEO Keyword</th><th>Outline</th></tr>
+        </thead>
+        <tbody>
+          {{ range $i, $p := .Site.Data.blogplan }}
+          <tr>
+            <td>{{ add $i 1 }}</td>
+            <td>{{ $p.title }}</td>
+            <td><code>/blog/{{ $p.slug }}/</code></td>
+            <td>{{ $p.keyword }}</td>
+            <td><ul class="outline">{{ range $p.outline }}<li>{{ . }}</li>{{ end }}</ul></td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</article>
+{{ end }}

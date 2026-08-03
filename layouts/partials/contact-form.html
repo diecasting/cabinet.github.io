@@ -1,0 +1,36 @@
+<form class="rfq-form" action="{{ .Site.Params.formspreeEndpoint }}" method="POST" novalidate>
+  <div class="form-grid">
+    <label>Name *
+      <input type="text" name="name" autocomplete="name" required>
+    </label>
+    <label>Company *
+      <input type="text" name="company" autocomplete="organization" required>
+    </label>
+    <label>Email *
+      <input type="email" name="email" autocomplete="email" required>
+    </label>
+    <label>Country
+      <input type="text" name="country" autocomplete="country-name">
+    </label>
+    <label>Product Requirement
+      <input type="text" name="product_requirement" placeholder="e.g. DIN rail components kit">
+    </label>
+    <label>Quantity
+      <input type="text" name="quantity" inputmode="numeric" placeholder="e.g. 500 sets">
+    </label>
+  </div>
+  <label>Message
+    <textarea name="message" rows="5" placeholder="Describe your project, specs and target timeline..."></textarea>
+  </label>
+
+  {{/* Honeypot spam protection — hidden from humans */}}
+  <div class="hp" aria-hidden="true">
+    <label>Please leave this field empty
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+    </label>
+  </div>
+
+  <input type="hidden" name="_subject" value="New RFQ — cabinet.github.io ({{ .Language.Lang }})">
+  <input type="hidden" name="_language" value="{{ .Language.Lang }}">
+  <button type="submit" class="btn btn-primary">{{ if .IsHome }}{{ .Params.hero.cta_quote }}{{ else }}Send RFQ{{ end }}</button>
+</form>

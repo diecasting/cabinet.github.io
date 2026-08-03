@@ -1,0 +1,80 @@
+{{ $url := .Site.BaseURL }}
+
+{{/* ---- Service schema (SEO landing pages) ---- */}}
+{{ if eq .Params.schema "Service" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": {{ .Title | jsonify }},
+  "serviceType": {{ (.Params.serviceType | default .Title) | jsonify }},
+  "description": {{ (.Params.description | default .Params.seoDescription | default .Summary) | plainify | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  "provider": {
+    "@type": "Organization",
+    "name": {{ .Site.Params.companyName | jsonify }},
+    "url": {{ $url | jsonify }}
+  },
+  "areaServed": "Worldwide",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Industrial manufacturers, panel builders, automation integrators"
+  }
+  {{ with .Params.offers }},
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0",
+    "availability": "https://schema.org/InStock"
+  }
+  {{ end }}
+}
+</script>
+{{ end }}
+
+{{/* ---- Product schema ---- */}}
+{{ if eq .Params.schema "Product" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ .Title | jsonify }},
+  "description": {{ (.Params.description | default .Params.seoDescription | default .Summary) | plainify | jsonify }},
+  "brand": {
+    "@type": "Brand",
+    "name": {{ .Site.Params.companyName | jsonify }}
+  },
+  "url": {{ .Permalink | jsonify }},
+  {{ with .Params.image }}"image": {{ (printf "%s%s" $url .) | jsonify }},{{ end }}
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0",
+    "availability": "https://schema.org/InStock",
+    "seller": { "@type": "Organization", "name": {{ .Site.Params.companyName | jsonify }} }
+  }
+}
+</script>
+{{ end }}
+
+{{/* ---- FAQ schema (FAQPage) ---- */}}
+{{ with .Params.faq }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $f := . }}
+    {
+      "@type": "Question",
+      "name": {{ $f.q | plainify | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ $f.a | plainify | jsonify }}
+      }
+    }{{ if ne $i (sub (len $.Params.faq) 1) }},{{ end }}
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
