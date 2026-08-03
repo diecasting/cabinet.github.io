@@ -12,32 +12,27 @@
 | Item | Value |
 | --- | --- |
 | Repo name | `cabinet.github.io` |
-| Recommended owner | GitHub user `cabinet` (→ live at `https://cabinet.github.io/`) |
-| Alternative (your usual org) | `diecasting/cabinet.github.io` → live at `https://diecasting.github.io/cabinet.github.io/` (set `baseURL` accordingly) |
-| Local commit | `5302512` on branch `main` (2 commits) |
-| Status | ⚠️ **Repo NOT yet created on GitHub** — no GitHub credential in this environment. Code is committed locally and ready to push. |
+| Owner | GitHub user **`diecasting`** |
+| Repo URL | `https://github.com/diecasting/cabinet.github.io` |
+| Live URL | `https://diecasting.github.io/cabinet.github.io/` ✅ |
+| Local commit | deployed on branch `main` |
+| Status | ✅ **Deployed & live** — repo created, `main` pushed, GitHub Pages (Source = GitHub Actions) enabled, workflow run succeeded. |
 
-### Commands to finish repo + push + Pages (run locally with your GitHub login)
+### How it was deployed (already done)
 ```bash
-cd cabinet.github.io
-# A) create the repo on GitHub (choose one owner):
-#    gh repo create cabinet/cabinet.github.io --public
-#    # or: gh repo create diecasting/cabinet.github.io --public
-git remote add origin https://github.com/cabinet/cabinet.github.io.git
-git push -u origin main
-
-# B) Enable Pages (Settings → Pages → Source = GitHub Actions)
-#    The workflow .github/workflows/hugo.yml auto-deploys on every push to main.
+# Repo created via GitHub API under user `diecasting`
+# git push -u origin main   (uses locally-configured git credential helper)
+# Pages enabled: Settings → Pages → Source = GitHub Actions → workflow auto-deploys
 ```
 
 ---
 
 ## 2. Live URL
 
-| Environment | URL |
-| --- | --- |
-| Production (after push + Pages) | `https://cabinet.github.io/` |
-| Local preview | `hugo server -D` → `http://localhost:1313/` |
+| Environment | URL | Status |
+| --- | --- | --- |
+| Production (LIVE) | `https://diecasting.github.io/cabinet.github.io/` | ✅ Deployed & verified HTTP 200 |
+| Local preview | `hugo server -D` → `http://localhost:1313/` | |
 
 ---
 
