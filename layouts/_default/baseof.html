@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Language.Lang }}" prefix="og: https://ogp.me/ns#" itemscope itemtype="https://schema.org/WebPage">
 <head>
-  <link rel="stylesheet" href="{{ relURL "/css/main.css" }}">
+  {{ $css := resources.Get "css/main.css" | resources.Minify }}<link rel="stylesheet" href="{{ $css.RelPermalink }}">
   {{ partial "site-head.html" . }}
 </head>
 <body class="lang-{{ .Language.Lang }}{{ if .IsHome }} home{{ end }}">
@@ -11,6 +11,6 @@
     {{ block "main" . }}{{ .Content }}{{ end }}
   </main>
   {{ partial "site-footer.html" . }}
-  <script src="{{ relURL "/js/main.js" }}" defer></script>
+  {{ $js := resources.Get "js/main.js" | resources.Minify }}<script src="{{ $js.RelPermalink }}" defer></script>
 </body>
 </html>

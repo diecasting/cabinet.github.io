@@ -12,7 +12,7 @@
       <h3>{{ i18n "navigate" }}</h3>
       <ul>
         {{ range .Site.Menus.main }}
-        <li><a href="{{ .PageRef | relLangURL }}">{{ i18n .Name }}</a></li>
+        <li><a href="{{ (strings.TrimPrefix "/" .PageRef) | relLangURL }}">{{ i18n .Name }}</a></li>
         {{ end }}
       </ul>
     </nav>

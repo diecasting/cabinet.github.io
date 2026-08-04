@@ -10,7 +10,7 @@
     <div class="card-grid">
       {{ range .Pages }}
       <article class="card">
-        {{ with .Params.image }}<img src="{{ . | relURL }}" alt="{{ $.Title }} — {{ . }}" title="{{ . }}" width="320" height="220" loading="lazy">{{ end }}
+        {{ with .Params.image }}{{ $img := resources.Get (strings.TrimPrefix "/" .) }}{{ if $img }}<img src="{{ $img.RelPermalink }}" alt="{{ $.Title }} — {{ . }}" title="{{ . }}" width="320" height="220" loading="lazy">{{ else }}<img src="{{ . | absURL }}" alt="{{ $.Title }} — {{ . }}" title="{{ . }}" width="320" height="220" loading="lazy">{{ end }}{{ end }}
         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
       </article>

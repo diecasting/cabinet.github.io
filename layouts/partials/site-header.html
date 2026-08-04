@@ -1,7 +1,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="{{ .Site.Home.RelPermalink }}" aria-label="{{ .Site.Title }}">
-      <img src="{{ relURL "/favicon.svg" }}" alt="{{ .Site.Params.companyName }}" width="32" height="32">
+      <img src="{{ (resources.Get "favicon.svg").RelPermalink }}" alt="{{ .Site.Params.companyName }}" width="32" height="32">
       <span class="brand-name">{{ .Site.Params.companyName }}</span>
     </a>
 
@@ -11,7 +11,7 @@
     <nav class="site-nav" aria-label="Primary">
       <ul>
         {{ range .Site.Menus.main }}
-        <li><a href="{{ .PageRef | relLangURL }}">{{ i18n .Name }}</a></li>
+        <li><a href="{{ (strings.TrimPrefix "/" .PageRef) | relLangURL }}">{{ i18n .Name }}</a></li>
         {{ end }}
       </ul>
     </nav>
